@@ -1,0 +1,19 @@
+{
+  "name": "fishTank",
+  "packageManager": "yarn@3.6.1",
+  "homepage": "https://johneckert.github.io/fishTank/",
+  "private": true,
+  "dependencies": {
+    "three": "^0.161.0"
+  },
+  "scripts": {
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
