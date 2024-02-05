@@ -1,3 +1,5 @@
+import './styles.css';
+
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const width = canvas.width = window.innerWidth;
@@ -11,4 +13,4 @@ const fps = 60;
 const secondsToUpdate = 1 * fps;
 let count = 0;
 
-canvas.style.marginTop = '0px';
+canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';

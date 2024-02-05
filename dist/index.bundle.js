@@ -1,1 +1,1 @@
-(()=>{const n=document.getElementById("canvas");n.getContext("2d"),n.width=window.innerWidth,n.height=window.innerHeight,n.style.marginTop="0px"})();
+(()=>{"use strict";const n=document.getElementById("canvas"),t=(n.getContext("2d"),n.width=window.innerWidth,n.height=window.innerHeight);n.style.marginTop=window.innerHeight/2-t/2+"px"})();
