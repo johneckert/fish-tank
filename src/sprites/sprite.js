@@ -1,5 +1,5 @@
 class Sprite {
-  constructor(context, posX, posY, img, frameWidth, frameHeight, speed ) {
+  constructor(context, posX, posY, img, frameWidth, frameHeight, speed) {
     this.context = context;
     this.x = posX;
     this.y = posY;
@@ -11,6 +11,7 @@ class Sprite {
     this.count = 0;
     this.scale = 1;
   }
+
   animate() {
     this.context.drawImage(
       this.img,
@@ -33,6 +34,14 @@ class Sprite {
     if (this.frameIndex > 5) {
       this.frameIndex = 0;
     }
+  }
+
+  move() {
+      if (this.x > this.context.canvas.width) {
+        this.x = -this.frameWidth;
+      }
+
+      this.x += 5;
   }
 }
 
