@@ -874,7 +874,6 @@ __metadata:
     html-webpack-plugin: ^5.6.0
     mini-css-extract-plugin: ^2.8.0
     style-loader: ^3.3.4
-    three: ^0.161.0
     webpack: ^5.90.1
     webpack-cli: ^5.1.4
   languageName: unknown
@@ -1828,13 +1827,6 @@ __metadata:
   bin:
     terser: bin/terser
   checksum: c165052cfea061e8512e9b9ba42a098c2ff6382886ae122b040fd5b6153443070cc2dcb4862269f1669c09c716763e856125a355ff984aa72be525d6fffd8729
-  languageName: node
-  linkType: hard
-
-"three@npm:^0.161.0":
-  version: 0.161.0
-  resolution: "three@npm:0.161.0"
-  checksum: eb4df25a794dcd92b62ca4705b62c9391735863b4016fabe6d136e220449e5d840c0cfd183eb07caef3d6aeb241e78f58845087b4d27a30a420ed8f35a2ab12d
   languageName: node
   linkType: hard
 
