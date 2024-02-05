@@ -18,6 +18,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Fish Tank',
       favicon: './src/favicon-32x32.png',
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin(),
   ],
