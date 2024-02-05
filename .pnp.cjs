@@ -29,6 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["css-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.10.0"],\
+            ["file-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0"],\
             ["gh-pages", "npm:6.1.1"],\
             ["html-webpack-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.6.0"],\
             ["mini-css-extract-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:2.8.0"],\
@@ -606,6 +607,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["big.js", [\
+        ["npm:5.2.2", {\
+          "packageLocation": "./.yarn/cache/big.js-npm-5.2.2-e147c30820-b89b6e8419.zip/node_modules/big.js/",\
+          "packageDependencies": [\
+            ["big.js", "npm:5.2.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["boolbase", [\
         ["npm:1.0.0", {\
           "packageLocation": "./.yarn/cache/boolbase-npm-1.0.0-965fe9af6d-3e25c80ef6.zip/node_modules/boolbase/",\
@@ -916,6 +926,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["emojis-list", [\
+        ["npm:3.0.0", {\
+          "packageLocation": "./.yarn/cache/emojis-list-npm-3.0.0-7faa48e6fd-ddaaa02542.zip/node_modules/emojis-list/",\
+          "packageDependencies": [\
+            ["emojis-list", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["enhanced-resolve", [\
         ["npm:5.15.0", {\
           "packageLocation": "./.yarn/cache/enhanced-resolve-npm-5.15.0-16eb7ddef9-fbd8cdc926.zip/node_modules/enhanced-resolve/",\
@@ -1045,6 +1064,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["file-loader", [\
+        ["npm:6.2.0", {\
+          "packageLocation": "./.yarn/cache/file-loader-npm-6.2.0-4b02fd87d5-faf43eecf2.zip/node_modules/file-loader/",\
+          "packageDependencies": [\
+            ["file-loader", "npm:6.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/file-loader-virtual-0a2e15bfe8/0/cache/file-loader-npm-6.2.0-4b02fd87d5-faf43eecf2.zip/node_modules/file-loader/",\
+          "packageDependencies": [\
+            ["file-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0"],\
+            ["@types/webpack", null],\
+            ["loader-utils", "npm:2.0.4"],\
+            ["schema-utils", "npm:3.3.0"],\
+            ["webpack", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.90.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/webpack",\
+            "webpack"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["filename-reserved-regex", [\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/filename-reserved-regex-npm-2.0.0-5d8c6e337c-323a0020fd.zip/node_modules/filename-reserved-regex/",\
@@ -1095,6 +1138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["fishTank", "workspace:."],\
             ["css-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.10.0"],\
+            ["file-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0"],\
             ["gh-pages", "npm:6.1.1"],\
             ["html-webpack-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.6.0"],\
             ["mini-css-extract-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:2.8.0"],\
@@ -1433,6 +1477,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["json5", [\
+        ["npm:2.2.3", {\
+          "packageLocation": "./.yarn/cache/json5-npm-2.2.3-9962c55073-2a7436a933.zip/node_modules/json5/",\
+          "packageDependencies": [\
+            ["json5", "npm:2.2.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["jsonfile", [\
         ["npm:6.1.0", {\
           "packageLocation": "./.yarn/cache/jsonfile-npm-6.1.0-20a4796cee-7af3b8e1ac.zip/node_modules/jsonfile/",\
@@ -1458,6 +1511,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/loader-runner-npm-4.3.0-9ca67df372-a90e00dee9.zip/node_modules/loader-runner/",\
           "packageDependencies": [\
             ["loader-runner", "npm:4.3.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["loader-utils", [\
+        ["npm:2.0.4", {\
+          "packageLocation": "./.yarn/cache/loader-utils-npm-2.0.4-ba3800585b-a5281f5fff.zip/node_modules/loader-utils/",\
+          "packageDependencies": [\
+            ["loader-utils", "npm:2.0.4"],\
+            ["big.js", "npm:5.2.2"],\
+            ["emojis-list", "npm:3.0.0"],\
+            ["json5", "npm:2.2.3"]\
           ],\
           "linkType": "HARD"\
         }]\
