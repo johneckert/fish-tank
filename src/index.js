@@ -10,9 +10,9 @@ const fps = 60;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
-const orangeFish = new OrangeFish(context, 100, 100, 10);
-const orangeFish2 = new OrangeFish(context, 300, 300, 5);
-const crab = new Crab(context, 1, height - 100, 3);
+const orangeFish = new OrangeFish(context, 100, 100, 30);
+const orangeFish2 = new OrangeFish(context, 300, 300, 20);
+const crab = new Crab(context, 1, height - 100, 40);
 
 function frame() {
     context.clearRect(0, 0, width, height);
