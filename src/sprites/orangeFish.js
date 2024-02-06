@@ -1,3 +1,4 @@
+import TWEEN from 'tween';
 import Sprite from "./sprite";
 import OrangeFishPNG from '../spriteMaps/orangeFish.png';
 
@@ -10,16 +11,30 @@ class OrangeFish extends Sprite {
     orangeFishSpriteSheet.src = OrangeFishPNG;
     
     super(context, posX, posY, orangeFishSpriteSheet, frameWidth, frameHeight, speed);
+    this.pos;
+    this.tween;
+    this.tick = 0;
   }
 
   move() {
-    console.log(t);
-    if (this.count % this.speed === 0) { // speed of animation
+    if (this.tick > this.speed) {
       if (this.x > this.context.canvas.width) {
         this.x = -this.frameWidth;
       }
-      this.x += 5;
-      this.y += Math.sin(this.x) * this.context.canvas.height / 10; // sin * amplitude
+
+      this.pos = { x: this.x, y: this.y };
+      let yVal = this.pos.y + Math.sin(this.pos.x) * (this.context.canvas.height / this.speed);
+
+      this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + 20, y: yVal }, 1000 / 60 * this.speed);
+
+      this.tween.onUpdate(() => {
+        this.x = this.pos.x;
+        this.y = this.pos.y;
+      });
+      this.tween.start();
+      this.tick = 0;
+    } else {
+      this.tick++;
     }
   }
 }

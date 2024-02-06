@@ -1,3 +1,4 @@
+import TWEEN from 'tween';
 import './styles.css';
 import OrangeFish from './sprites/orangeFish';
 import Crab from './sprites/crab';
@@ -10,9 +11,9 @@ const fps = 60;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
-const orangeFish = new OrangeFish(context, 100, 100, 30);
-const orangeFish2 = new OrangeFish(context, 300, 300, 20);
-const crab = new Crab(context, 1, height - 100, 40);
+const orangeFish = new OrangeFish(context, 100, 100, 50);
+const orangeFish2 = new OrangeFish(context, 300, 300, 30);
+const crab = new Crab(context, 1, height - 100, 4);
 
 function frame() {
     context.clearRect(0, 0, width, height);
@@ -24,6 +25,7 @@ function frame() {
     crab.move();
 
     requestAnimationFrame(frame);
+    TWEEN.update();
 }
 
 frame();
