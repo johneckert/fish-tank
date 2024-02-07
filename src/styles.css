@@ -6,8 +6,8 @@ body {
 
 canvas {
   display: block;
-  background: #DDD;
+  background: rgb(0,166,255);
+  background: linear-gradient(0deg, rgba(0,166,255,1) 0%, rgba(28,233,236,1) 47%, rgba(219,249,255,1) 100%);
   margin: 0 auto;
   border: solid 3px #767676;
-  border-radius: 10px;
 }
