@@ -11,16 +11,13 @@ const fps = 60;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
-const orangeFish = new OrangeFish(context, 100, 100, 50);
-const orangeFish2 = new OrangeFish(context, 300, 300, 30);
-const crab = new Crab(context, 1, height - 100, 4);
+const orangeFish = new OrangeFish(context, 300, 300, 30);
+const crab = new Crab(context, 1, height - 100, 40);
 
 function frame() {
     context.clearRect(0, 0, width, height);
     orangeFish.animate();
     orangeFish.move();
-    orangeFish2.animate();
-    orangeFish2.move();
     crab.animate();
     crab.move();
 
