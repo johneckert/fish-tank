@@ -1,7 +1,8 @@
+@import url(https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700;800;900&display=swap);
 body {
   margin: 0px;
   height: 100vh;
-  background-color: pink;
+  overflow: hidden;
 }
 
 canvas {
@@ -9,6 +10,35 @@ canvas {
   background: rgb(0,166,255);
   background: linear-gradient(0deg, rgba(0,166,255,1) 0%, rgba(28,233,236,1) 47%, rgba(219,249,255,1) 100%);
   margin: 0 auto;
-  border: solid 3px #767676;
+  border: none;
+}
+
+#overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 25%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  pointer-events: none;
+  z-index: 500;
+ /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#clock {
+  color: white;
+  font-size: 8rem;
+  /* font-family: 'Rubik', sans-serif; */
+  font-family: 'Inconsolata', monospace;
+  font-weight: 900;
+  padding: 0;
 }
 
