@@ -35,14 +35,6 @@ class Sprite {
       this.frameIndex = 0;
     }
   }
-
-  move() {
-      if (this.x > this.context.canvas.width) {
-        this.x = -this.frameWidth;
-      }
-
-      this.x += 5;
-  }
 }
 
 export default Sprite;
