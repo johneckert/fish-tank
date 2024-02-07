@@ -28,8 +28,14 @@ function frame() {
 frame();
 
 // Clock
-const clockDiv = document.getElementById('clock');
-let clockInterval = setInterval(() => {
-    let time = new Date();
+function updateTime() {
+    const clockDiv = document.getElementById('clock');
+    const time = new Date();
     clockDiv.innerHTML = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-}, 500);
+}
+updateTime();
+const clockInterval = setInterval(updateTime, 500);
+
+window.addEventListener("beforeunload", function (e) {
+    clearInterval(clockInterval);
+});
