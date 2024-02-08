@@ -1,16 +1,16 @@
 import TWEEN from 'tween';
 import Sprite from "./sprite";
-import OrangeFishPNG from '../spriteMaps/orangeFish.png';
+import GreenFishPNG from '../spriteMaps/greenFish.png';
 
 
-class OrangeFish extends Sprite {
+class GreenFish extends Sprite {
   constructor(context, posX, posY, speed) {
-    const orangeFishSpriteSheet = new Image();
+    const greenFishSpriteSheet = new Image();
     const frameWidth = 100;
     const frameHeight = 100;
-    orangeFishSpriteSheet.src = OrangeFishPNG;
+    greenFishSpriteSheet.src = GreenFishPNG;
     
-    super(context, posX, posY, orangeFishSpriteSheet, frameWidth, frameHeight, speed);
+    super(context, posX, posY, greenFishSpriteSheet, frameWidth, frameHeight, speed);
     this.pos;
     this.tween;
     this.tick = this.speed;
@@ -23,14 +23,14 @@ class OrangeFish extends Sprite {
       }
 
       this.pos = { x: this.x, y: this.y };
-      let yVal = this.pos.y + Math.sin(this.pos.x) * this.speed;
+      let random = Math.random() * 20 ;
+      let yVal = this.pos.y + Math.cos(this.pos.x) * (this.speed * random);
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
       }
       if (yVal < 0) {
         yVal = 10;
       }
-
 
       this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
 
@@ -46,4 +46,4 @@ class OrangeFish extends Sprite {
   }
 }
 
-export default OrangeFish;
+export default GreenFish;
