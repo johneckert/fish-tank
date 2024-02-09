@@ -32,10 +32,12 @@ function frame() {
 frame();
 
 // Clock
+const clockElement = document.getElementById('clock');
+const dateElement = document.getElementById('date');
 function updateTime() {
-    const clockDiv = document.getElementById('clock');
     const time = new Date();
-    clockDiv.innerHTML = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    clockElement.innerHTML = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    dateElement.innerHTML = time.toLocaleDateString([], { weekday: "long", year: "numeric", month: "long", day: "numeric" });
 }
 updateTime();
 const clockInterval = setInterval(updateTime, 500);
@@ -43,3 +45,16 @@ const clockInterval = setInterval(updateTime, 500);
 window.addEventListener("beforeunload", function (e) {
     clearInterval(clockInterval);
 });
+
+// Fact
+const factDiv = document.getElementById('fact');
+let fact;
+fetch('https://uselessfacts.jsph.pl/api/v2/facts/today?language=en')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        fact = data.text;
+        factDiv.innerHTML = fact;
+    });
+
+// Could the background match the current weather?
