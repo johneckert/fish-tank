@@ -18,7 +18,12 @@ class Crab extends Sprite {
 
   move() {
     if (this.tick > this.speed) {
-      if (this.x > window.innerWidth) {
+      let random = Math.floor(Math.random() * 100);
+      if (random < 5) {
+        this.direction *= -1;
+      }
+
+      if (this.x > this.context.canvas.width) {
         this.direction = -1;
       }
 
