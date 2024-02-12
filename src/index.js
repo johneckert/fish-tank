@@ -1,5 +1,6 @@
 import TWEEN from 'tween';
 import './styles.css';
+import clock from './clock';
 import OrangeFish from './sprites/orangeFish';
 import GreenFish from './sprites/greenFish';
 import Crab from './sprites/crab';
@@ -30,31 +31,5 @@ function frame() {
 }
 
 frame();
-
-// Clock
-const clockElement = document.getElementById('clock');
-const dateElement = document.getElementById('date');
-function updateTime() {
-    const time = new Date();
-    clockElement.innerHTML = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    dateElement.innerHTML = time.toLocaleDateString([], { weekday: "long", year: "numeric", month: "long", day: "numeric" });
-}
-updateTime();
-const clockInterval = setInterval(updateTime, 500);
-
-window.addEventListener("beforeunload", function (e) {
-    clearInterval(clockInterval);
-});
-
-// Fact
-const factDiv = document.getElementById('fact');
-let fact;
-fetch('https://uselessfacts.jsph.pl/api/v2/facts/today?language=en')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        fact = data.text;
-        factDiv.innerHTML = fact;
-    });
-
+clock();
 // Could the background match the current weather?
