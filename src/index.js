@@ -6,6 +6,7 @@ import GreenFish from './sprites/greenFish';
 import Crab from './sprites/crab';
 import GreenSeaweed from './sprites/greenSeaweed';
 import BlueSeaweed from './sprites/blueSeaweed';
+import RedSeaweed from './sprites/redSeaweed';
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -20,19 +21,25 @@ const greenFish = new GreenFish(context, 1, 500, 100);
 const crab = new Crab(context, 1, height - 100, 40);
 
 const greenSeaweed = [];
-    for (let i = 0; i < width; i+= 110) {
-        greenSeaweed.push(new GreenSeaweed(context, i, height - 100, 0));
-    }
+for (let i = 0; i < width; i+= 110) {
+    greenSeaweed.push(new GreenSeaweed(context, i, height - 100, 0));
+}
 
 const blueSeaweed = [];
-    for (let i = 50; i < width; i+= 75) {
-        blueSeaweed.push(new BlueSeaweed(context, i, height - 100, 0));
-    }
+for (let i = 50; i < width; i+= 75) {
+    blueSeaweed.push(new BlueSeaweed(context, i, height - 100, 0));
+}
+
+const redSeaweed = [];
+for (let i = Math.floor(Math.random() * 24); i < width - 15; i+= width / Math.floor(Math.random() * 6 + 3 )) {
+    redSeaweed.push(new RedSeaweed(context, i, height - 100, 0));
+}
 
 function frame() {
     context.clearRect(0, 0, width, height);
     greenSeaweed.map((sprite) => sprite.animate());
     blueSeaweed.map((sprite) => sprite.animate());
+    redSeaweed.map((sprite) => sprite.animate());
     orangeFish.animate();
     orangeFish.move();
     greenFish.animate();
