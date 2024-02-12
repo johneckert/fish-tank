@@ -4,6 +4,8 @@ import clock from './clock';
 import OrangeFish from './sprites/orangeFish';
 import GreenFish from './sprites/greenFish';
 import Crab from './sprites/crab';
+import GreenSeaweed from './sprites/greenSeaweed';
+import BlueSeaweed from './sprites/blueSeaweed';
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
@@ -17,8 +19,20 @@ const orangeFish = new OrangeFish(context, width - 200, 300, 30);
 const greenFish = new GreenFish(context, 1, 500, 100);
 const crab = new Crab(context, 1, height - 100, 40);
 
+const greenSeaweed = [];
+    for (let i = 0; i < width; i+= 110) {
+        greenSeaweed.push(new GreenSeaweed(context, i, height - 100, 0));
+    }
+
+const blueSeaweed = [];
+    for (let i = 50; i < width; i+= 75) {
+        blueSeaweed.push(new BlueSeaweed(context, i, height - 100, 0));
+    }
+
 function frame() {
     context.clearRect(0, 0, width, height);
+    greenSeaweed.map((sprite) => sprite.animate());
+    blueSeaweed.map((sprite) => sprite.animate());
     orangeFish.animate();
     orangeFish.move();
     greenFish.animate();

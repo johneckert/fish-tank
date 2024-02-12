@@ -7,6 +7,7 @@ class Sprite {
     this.frameWidth = frameWidth;
     this.frameHeight = frameHeight;
     this.frameIndex = 0;
+    this.endFrame = 5;
     this.speed = speed;
     this.count = 0;
     this.scale = 1;
@@ -31,7 +32,7 @@ class Sprite {
       this.count = 0;
     }
 
-    if (this.frameIndex > 5) {
+    if (this.frameIndex > this.endFrame) {
       this.frameIndex = 0;
     }
   }
