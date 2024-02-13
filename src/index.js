@@ -3,6 +3,7 @@ import './styles.css';
 import clock from './clock';
 import OrangeFish from './sprites/orangeFish';
 import GreenFish from './sprites/greenFish';
+import BlueFish from './sprites/blueFish';
 import Crab from './sprites/crab';
 import GreenSeaweed from './sprites/greenSeaweed';
 import BlueSeaweed from './sprites/blueSeaweed';
@@ -18,6 +19,7 @@ canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
 const orangeFish = new OrangeFish(context, width - 200, 300, 30);
 const greenFish = new GreenFish(context, 1, 500, 100);
+const blueFish = new BlueFish(context, width, 100, 200);
 const crab = new Crab(context, 1, height - 100, 40);
 
 const greenSeaweed = [];
@@ -44,6 +46,8 @@ function frame() {
     orangeFish.move();
     greenFish.animate();
     greenFish.move();
+    blueFish.animate();
+    blueFish.move();
     crab.animate();
     crab.move();
 

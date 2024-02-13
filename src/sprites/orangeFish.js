@@ -23,15 +23,14 @@ class OrangeFish extends Sprite {
       }
 
       this.pos = { x: this.x, y: this.y };
-      let yVal = this.pos.y + Math.sin(this.pos.x) * this.speed;
+      let yVal = Math.sin(this.pos.x / 100) * (this.speed * 10);
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
       }
       if (yVal < 0) {
         yVal = 10;
       }
-
-
+      
       this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
 
       this.tween.onUpdate(() => {
