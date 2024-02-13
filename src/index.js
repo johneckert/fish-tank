@@ -6,6 +6,8 @@ import GreenFish from './sprites/greenFish';
 import BlueFish from './sprites/blueFish';
 import Crab from './sprites/crab';
 import Prawn from './sprites/prawn';
+import Octopus from './sprites/octopus';
+import JellyFish from './sprites/jellyFish';
 import GreenSeaweed from './sprites/greenSeaweed';
 import BlueSeaweed from './sprites/blueSeaweed';
 import RedSeaweed from './sprites/redSeaweed';
@@ -23,6 +25,8 @@ const greenFish = new GreenFish(context, 1, 500, 100);
 const blueFish = new BlueFish(context, width, 100, 200);
 const crab = new Crab(context, 1, height - 100, 40);
 const prawn = new Prawn(context, 1, 1, 700);
+const octopus = new Octopus(context, width - 100, height - 200, 400);
+const jellyFish = new JellyFish(context, 1, 150, 20);
 
 const greenSeaweed = [];
 for (let i = 0; i < width; i+= 110) {
@@ -54,6 +58,10 @@ function frame() {
     crab.move();
     prawn.animate();
     prawn.move();
+    octopus.animate();
+    octopus.move();
+    jellyFish.animate();
+    jellyFish.move();
 
     requestAnimationFrame(frame);
     TWEEN.update();
