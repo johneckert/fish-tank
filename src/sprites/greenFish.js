@@ -33,7 +33,6 @@ class GreenFish extends Sprite {
       }
 
       this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
-      // this.tween.easing(TWEEN.Easing.Quadratic.In);
 
       this.tween.onUpdate(() => {
         this.x = this.pos.x;
