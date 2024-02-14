@@ -23,7 +23,7 @@ class GreenFish extends Sprite {
       }
 
       this.pos = { x: this.x, y: this.y };
-      let random = Math.random() * 20 ;
+      let random = Math.random() * 5;
       let yVal = this.pos.y + Math.cos(this.pos.x) * (this.speed * random);
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
