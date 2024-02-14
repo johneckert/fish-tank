@@ -864,9 +864,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fishTank@workspace:.":
+"fish-tank@workspace:.":
   version: 0.0.0-use.local
-  resolution: "fishTank@workspace:."
+  resolution: "fish-tank@workspace:."
   dependencies:
     css-loader: ^6.10.0
     file-loader: ^6.2.0
