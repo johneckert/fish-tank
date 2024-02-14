@@ -1,6 +1,6 @@
 # Fish Tank
 
-A fun landing page for your browser consisting of an animated fish tank using WebGL.
+A fun landing page for your browser.
 
 ## Installation
 
