@@ -23,49 +23,47 @@ const height = context.canvas.height = window.innerHeight;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
-const orangeFish = new OrangeFish(context, width - 200, 300, 30);
-const greenFish = new GreenFish(context, 1, 500, 100);
-const blueFish = new BlueFish(context, width, 100, 200);
-const crab = new Crab(context, 1, height - 100, 40);
-const prawn = new Prawn(context, 1, 1, 700);
-const octopus = new Octopus(context, width - 100, height - 200, 400);
-const jellyFish = new JellyFish(context, 1, 150, 20);
+const randomX = () => Math.floor(Math.random() * width);
+const randomY = () => Math.floor(Math.random() * height);
+const randomSpeed = () => Math.floor(Math.random() * 400);
+
+const createFish = () => {
+  const FISH_OPTIONS = [OrangeFish, GreenFish, BlueFish, Prawn, Octopus, JellyFish];
+  const randomFish = FISH_OPTIONS[Math.floor(Math.random() * FISH_OPTIONS.length)];
+  return new randomFish(context, randomX(), randomY(), randomSpeed());
+}
+
+const createBottomFeeder = () => {
+  const BOTTOM_FEEDERS = [Crab];
+  const randomBottomFeeder = BOTTOM_FEEDERS[Math.floor(Math.random() * BOTTOM_FEEDERS.length)];
+  return new randomBottomFeeder(context, randomX(), height - 100, randomSpeed());
+}
 
 const greenSeaweed = [];
 for (let i = 0; i < width; i+= 110) {
-    greenSeaweed.push(new GreenSeaweed(context, i, height - 100, 0));
+  greenSeaweed.push(new GreenSeaweed(context, i, height - 100, 0));
 }
 
 const blueSeaweed = [];
 for (let i = 50; i < width; i+= 75) {
-    blueSeaweed.push(new BlueSeaweed(context, i, height - 100, 0));
+  blueSeaweed.push(new BlueSeaweed(context, i, height - 100, 0));
 }
 
-const redSeaweed = [];
+const fish = [];
+for (let i = 0; i < 10; i++) {
+  fish.push(createFish());
+}
 
-for (let i = Math.floor(Math.random() * 24); i < width - 15; i+= width / Math.floor(Math.random() * 6 + 3 )) {
-    redSeaweed.push(new RedSeaweed(context, i, height - 100, 0));
+for (let i = 0; i < Math.floor(Math.random() * 4); i++) {
+  fish.push(createBottomFeeder());
 }
 
 function frame() {
     context.clearRect(0, 0, width, height);
     greenSeaweed.map((sprite) => sprite.animate());
     blueSeaweed.map((sprite) => sprite.animate());
-    redSeaweed.map((sprite) => sprite.animate());
-    orangeFish.animate();
-    orangeFish.move();
-    greenFish.animate();
-    greenFish.move();
-    blueFish.animate();
-    blueFish.move();
-    crab.animate();
-    crab.move();
-    prawn.animate();
-    prawn.move();
-    octopus.animate();
-    octopus.move();
-    jellyFish.animate();
-    jellyFish.move();
+    fish.map((sprite) => sprite.animate());
+    fish.map((sprite) => sprite.move());
 
     requestAnimationFrame(frame);
     TWEEN.update();
@@ -73,7 +71,6 @@ function frame() {
 
 frame();
 clock();
-// Could the background match the current weather?
 
 window.addEventListener('resize', () => {
     window.location.reload();

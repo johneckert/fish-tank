@@ -20,8 +20,8 @@ class Octopus extends Sprite {
   move() {
     if (this.tick === this.speed) {
       const pos = { x: this.x, y: this.y };
-      const yVal = Math.random() * (this.context.canvas.height - 20) + 10;
-      const xVal = Math.random() * (this.context.canvas.width - 20) + 10;
+      const yVal = Math.random() * (this.context.canvas.height - this.frameHeight) + this.frameHeight;
+      const xVal = Math.random() * (this.context.canvas.width - this.frameWidth) + this.frameWidth;
       this.tween = new TWEEN.Tween(pos).to({ x: xVal, y: yVal }, 1000 / 60 * this.speed);
       this.tween.easing(TWEEN.Easing.Quadratic.Out);
 
