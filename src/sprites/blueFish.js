@@ -12,7 +12,6 @@ class BlueFish extends Sprite {
     
     super(context, posX, posY, blueFishSpriteSheet, frameWidth, frameHeight, speed);
     this.direction = -1;
-    this.pos;
     this.tween;
     this.tick = this.speed;
   }
@@ -23,9 +22,9 @@ class BlueFish extends Sprite {
         this.x = this.context.canvas.width + this.frameWidth;
       }
 
-      this.pos = { x: this.x, y: this.y };
-      let random = Math.random() * 20 ;
-      let yVal = this.pos.y + Math.cos(this.pos.x) * (this.speed * random) * this.direction;
+      const pos = { x: this.x, y: this.y };
+      const random = Math.random() * 20 ;
+      let yVal = pos.y + Math.cos(pos.x) * (this.speed * random) * this.direction;
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
       }
@@ -33,12 +32,12 @@ class BlueFish extends Sprite {
         yVal = 10;
       }
 
-      this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed * this.direction, y: yVal }, 1000 / 60 * this.speed);
+      this.tween = new TWEEN.Tween(pos).to({ x: pos.x + this.speed * this.direction, y: yVal }, 1000 / 60 * this.speed);
       this.tween.easing(TWEEN.Easing.Quadratic.Out);
 
       this.tween.onUpdate(() => {
-        this.x = this.pos.x;
-        this.y = this.pos.y;
+        this.x = pos.x;
+        this.y = pos.y;
       });
       this.tween.start();
       this.tick = 0;

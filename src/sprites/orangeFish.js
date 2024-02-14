@@ -11,7 +11,6 @@ class OrangeFish extends Sprite {
     orangeFishSpriteSheet.src = OrangeFishPNG;
     
     super(context, posX, posY, orangeFishSpriteSheet, frameWidth, frameHeight, speed);
-    this.pos;
     this.tween;
     this.tick = this.speed;
   }
@@ -22,8 +21,8 @@ class OrangeFish extends Sprite {
         this.x = -this.frameWidth;
       }
 
-      this.pos = { x: this.x, y: this.y };
-      let yVal = Math.sin(this.pos.x / 100) * (this.speed * 10);
+      const pos = { x: this.x, y: this.y };
+      let yVal = Math.sin(pos.x / 100) * (this.speed * 10);
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
       }
@@ -31,11 +30,11 @@ class OrangeFish extends Sprite {
         yVal = 10;
       }
       
-      this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
+      this.tween = new TWEEN.Tween(pos).to({ x: pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
 
       this.tween.onUpdate(() => {
-        this.x = this.pos.x;
-        this.y = this.pos.y;
+        this.x = pos.x;
+        this.y = pos.y;
       });
       this.tween.start();
       this.tick = 0;

@@ -11,7 +11,6 @@ class GreenFish extends Sprite {
     greenFishSpriteSheet.src = GreenFishPNG;
     
     super(context, posX, posY, greenFishSpriteSheet, frameWidth, frameHeight, speed);
-    this.pos;
     this.tween;
     this.tick = this.speed;
   }
@@ -22,9 +21,9 @@ class GreenFish extends Sprite {
         this.x = -this.frameWidth;
       }
 
-      this.pos = { x: this.x, y: this.y };
+      const pos = { x: this.x, y: this.y };
       let random = Math.random() * 5;
-      let yVal = this.pos.y + Math.cos(this.pos.x) * (this.speed * random);
+      let yVal = pos.y + Math.cos(pos.x) * (this.speed * random);
       if (yVal > this.context.canvas.height - this.frameHeight) {
         yVal = this.context.canvas.height - this.frameHeight - 10;
       }
@@ -32,11 +31,11 @@ class GreenFish extends Sprite {
         yVal = 10;
       }
 
-      this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
+      this.tween = new TWEEN.Tween(pos).to({ x: pos.x + this.speed, y: yVal }, 1000 / 60 * this.speed);
 
       this.tween.onUpdate(() => {
-        this.x = this.pos.x;
-        this.y = this.pos.y;
+        this.x = pos.x;
+        this.y = pos.y;
       });
       this.tween.start();
       this.tick = 0;

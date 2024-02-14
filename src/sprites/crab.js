@@ -11,7 +11,6 @@ class Crab extends Sprite {
     
     super(context, posX, posY, crabSpriteSheet, frameWidth, frameHeight, speed);
     this.direction = 1;
-    this.pos;
     this.tween;
     this.tick = 0;
   }
@@ -31,11 +30,11 @@ class Crab extends Sprite {
         this.direction = 1;
       }
 
-      this.pos = { x: this.x, y: this.y };
-      this.tween = new TWEEN.Tween(this.pos).to({ x: this.pos.x + (5 * this.direction) }, 1000 / 60 * this.speed);
+      const pos = { x: this.x, y: this.y };
+      this.tween = new TWEEN.Tween(pos).to({ x: pos.x + (5 * this.direction) }, 1000 / 60 * this.speed);
 
       this.tween.onUpdate(() => {
-        this.x = this.pos.x;
+        this.x = pos.x;
       });
       this.tween.start();
       this.tick = 0;

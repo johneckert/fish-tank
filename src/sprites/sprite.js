@@ -1,4 +1,4 @@
-import TWEEN from 'tween.js';
+import TWEEN from 'tween';
 
 class Sprite {
   constructor(context, posX, posY, img, frameWidth, frameHeight, speed) {
