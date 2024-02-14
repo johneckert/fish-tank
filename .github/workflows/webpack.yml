@@ -10,20 +10,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
     steps:
     - uses: actions/checkout@v3
 
-    - name: Use Node.js 20.x
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        node-version: 20.x
+        node-version: ${{ matrix.node-version }}
 
-    - name: Run install
-      uses: borales/actions-yarn@v4
-      with:
-        cmd: install # will run `yarn install` command
+    - name: Install corepack
+      run: yarn global add corepack
 
     - name: Build
-      uses: borales/actions-yarn@v4
-      with:
-        cmd: build # will run `yarn build` command
+      run: |
+        yarn install
+        yarn build
