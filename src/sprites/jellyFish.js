@@ -26,6 +26,9 @@ class JellyFish extends Sprite {
     if (this.tick === this.speed) {
       const pos = { x: this.x, y: this.y };
       let yVal = this.y + Math.random() * this.speed * yDir;
+      if (yVal > this.context.canvas.height - 100) {
+        yVal = this.context.canvas.height - 100;
+      }
       let xVal = this.x + Math.random() * this.speed;
       this.tween = new TWEEN.Tween(pos).to({ x: xVal, y: yVal }, 1000 / 60 * this.speed);
       this.tween.easing(TWEEN.Easing.Quadratic.Out);

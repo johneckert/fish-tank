@@ -25,7 +25,7 @@ canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
 const randomX = () => Math.floor(Math.random() * width);
 const randomY = () => Math.floor(Math.random() * height);
-const randomSpeed = () => Math.floor(Math.random() * 400);
+const randomSpeed = () => Math.floor((Math.random() * 300) + 100);
 
 const createFish = () => {
   const FISH_OPTIONS = [OrangeFish, GreenFish, BlueFish, Prawn, Octopus, JellyFish];
