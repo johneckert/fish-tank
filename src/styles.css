@@ -52,10 +52,10 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 25%;
-  left: 30%;
-  width: 40%;
-  height: 40%;
+  top: 25vh;
+  left: 30vw;
+  width: 40vw;
+  height: 40vh;
   pointer-events: none;
   z-index: 500;
  /* From https://css.glass */

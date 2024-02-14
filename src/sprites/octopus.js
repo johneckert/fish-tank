@@ -27,7 +27,6 @@ class Octopus extends Sprite {
       this.tween.easing(TWEEN.Easing.Quadratic.Out);
 
       this.tween.onUpdate(() => {
-        console.log('x: ', this.pos.x, 'y: ', this.pos.y);
         this.x = this.pos.x;
         this.y = this.pos.y;
       });

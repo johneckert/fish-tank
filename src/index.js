@@ -14,9 +14,8 @@ import RedSeaweed from './sprites/redSeaweed';
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-const width = canvas.width = window.innerWidth;
-const height = canvas.height = window.innerHeight;
-const fps = 60;
+const width = context.canvas.width = window.innerWidth;
+const height = context.canvas.height = window.innerHeight;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
@@ -39,6 +38,7 @@ for (let i = 50; i < width; i+= 75) {
 }
 
 const redSeaweed = [];
+
 for (let i = Math.floor(Math.random() * 24); i < width - 15; i+= width / Math.floor(Math.random() * 6 + 3 )) {
     redSeaweed.push(new RedSeaweed(context, i, height - 100, 0));
 }
@@ -70,3 +70,7 @@ function frame() {
 frame();
 clock();
 // Could the background match the current weather?
+
+window.addEventListener('resize', () => {
+    window.location.reload();
+});
