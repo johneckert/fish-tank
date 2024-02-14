@@ -4,7 +4,7 @@
   "homepage": "https://johneckert.github.io/fish-tank/",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "css-loader": "^6.10.0",
