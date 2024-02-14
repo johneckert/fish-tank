@@ -16,6 +16,10 @@ import RedSeaweed from './sprites/redSeaweed';
 fitty('#date');
 fitty('#clock');
 
+const currentTime = new Date();
+const isNight = currentTime.getHours() > 18 || currentTime.getHours() < 6;
+
+const overlay = document.getElementById('overlay');
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 const width = context.canvas.width = window.innerWidth;
@@ -23,19 +27,30 @@ const height = context.canvas.height = window.innerHeight;
 
 canvas.style.marginTop = window.innerHeight / 2 - height / 2 + 'px';
 
+if (isNight) {
+  canvas.classList.add('night');
+  overlay.classList.add('night');
+}
+
 const randomX = () => Math.floor(Math.random() * width);
 const randomY = () => Math.floor(Math.random() * height);
 const randomSpeed = () => Math.floor((Math.random() * 300) + 100);
 
+const DAY_FISH = [OrangeFish, GreenFish, BlueFish, Prawn, Octopus, JellyFish];
+const NIGHT_FISH = [JellyFish];
+
+const DAY_BOTTOM_FEEDERS = [Crab];
+const NIGHT_BOTTOM_FEEDERS = [Crab];
+
 const createFish = () => {
-  const FISH_OPTIONS = [OrangeFish, GreenFish, BlueFish, Prawn, Octopus, JellyFish];
-  const randomFish = FISH_OPTIONS[Math.floor(Math.random() * FISH_OPTIONS.length)];
+  const fishOptions = isNight ? NIGHT_FISH : DAY_FISH;
+  const randomFish = fishOptions[Math.floor(Math.random() * fishOptions.length)];
   return new randomFish(context, randomX(), randomY(), randomSpeed());
 }
 
 const createBottomFeeder = () => {
-  const BOTTOM_FEEDERS = [Crab];
-  const randomBottomFeeder = BOTTOM_FEEDERS[Math.floor(Math.random() * BOTTOM_FEEDERS.length)];
+  const bottomFeeders = isNight ? NIGHT_BOTTOM_FEEDERS : DAY_BOTTOM_FEEDERS;
+  const randomBottomFeeder = bottomFeeders[Math.floor(Math.random() * bottomFeeders.length)];
   return new randomBottomFeeder(context, randomX(), height - 100, randomSpeed());
 }
 
