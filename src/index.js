@@ -1,4 +1,5 @@
 import TWEEN from 'tween';
+import fitty from 'fitty';
 import './styles.css';
 import clock from './clock';
 import OrangeFish from './sprites/orangeFish';
@@ -11,6 +12,9 @@ import JellyFish from './sprites/jellyFish';
 import GreenSeaweed from './sprites/greenSeaweed';
 import BlueSeaweed from './sprites/blueSeaweed';
 import RedSeaweed from './sprites/redSeaweed';
+
+fitty('#date');
+fitty('#clock');
 
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');

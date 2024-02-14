@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["css-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.10.0"],\
             ["file-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0"],\
+            ["fitty", "npm:2.4.2"],\
             ["gh-pages", "npm:6.1.1"],\
             ["html-webpack-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.6.0"],\
             ["mini-css-extract-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:2.8.0"],\
@@ -1139,6 +1140,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fishTank", "workspace:."],\
             ["css-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.10.0"],\
             ["file-loader", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:6.2.0"],\
+            ["fitty", "npm:2.4.2"],\
             ["gh-pages", "npm:6.1.1"],\
             ["html-webpack-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.6.0"],\
             ["mini-css-extract-plugin", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:2.8.0"],\
@@ -1148,6 +1150,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["webpack-cli", "virtual:81a8e2046380f3af8f715cd7c20c904da99838fe9cae442ee4d00ee4b6c654d7f39561cad2408ce0f80f3cdb2251cf26b9c3a58f52f5b8787e0889b9caa7849c#npm:5.1.4"]\
           ],\
           "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["fitty", [\
+        ["npm:2.4.2", {\
+          "packageLocation": "./.yarn/cache/fitty-npm-2.4.2-61211d429e-008e8d6234.zip/node_modules/fitty/",\
+          "packageDependencies": [\
+            ["fitty", "npm:2.4.2"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["flat", [\

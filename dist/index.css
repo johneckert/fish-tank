@@ -9,15 +9,6 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;  
-  height: 100%;
-}
-
 canvas {
   display: block;
   background: rgb(0,166,255);
@@ -32,17 +23,10 @@ h1 {
 }
 
 h2 {
-  /* font-size: 3rem; */
   font-size: calc(100vw / 33.8);
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 0.5rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-  font-weight: 100;
-  margin: 0;
 }
 
 #overlay {
@@ -54,7 +38,6 @@ h3 {
   top: 25vh;
   left: 30vw;
   width: 40vw;
-  height: 40vh;
   pointer-events: none;
   z-index: 500;
  /* From https://css.glass */
@@ -64,10 +47,10 @@ h3 {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1rem;
+  padding: 2rem;
 }
 
-#overlay > div {
+#clock-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,11 +61,5 @@ h3 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   padding: 0;
-}
-
-#fact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 

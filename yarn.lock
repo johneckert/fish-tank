@@ -870,6 +870,7 @@ __metadata:
   dependencies:
     css-loader: ^6.10.0
     file-loader: ^6.2.0
+    fitty: ^2.4.2
     gh-pages: ^6.1.1
     html-webpack-plugin: ^5.6.0
     mini-css-extract-plugin: ^2.8.0
@@ -879,6 +880,13 @@ __metadata:
     webpack-cli: ^5.1.4
   languageName: unknown
   linkType: soft
+
+"fitty@npm:^2.4.2":
+  version: 2.4.2
+  resolution: "fitty@npm:2.4.2"
+  checksum: 008e8d6234e862125cbbe03b7c5aab228df25886c3eb93c7a5fdc7a7c616dd8cb6830e01aced6c1e2c1cb9aa4896ce9f58e08abe50459e0b0cc6106524b90d4b
+  languageName: node
+  linkType: hard
 
 "flat@npm:^5.0.2":
   version: 5.0.2
