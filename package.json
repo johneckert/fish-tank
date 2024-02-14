@@ -1,5 +1,5 @@
 {
-  "name": "fishTank",
+  "name": "fish-tank",
   "packageManager": "yarn@3.6.1",
   "homepage": "https://johneckert.github.io/fish-tank/",
   "private": true,
