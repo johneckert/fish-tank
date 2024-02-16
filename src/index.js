@@ -9,6 +9,7 @@ import Crab from './sprites/crab';
 import Prawn from './sprites/prawn';
 import Octopus from './sprites/octopus';
 import JellyFish from './sprites/jellyFish';
+import AnglerFish from './sprites/anglerFish';
 import GreenSeaweed from './sprites/greenSeaweed';
 import BlueSeaweed from './sprites/blueSeaweed';
 import RedSeaweed from './sprites/redSeaweed';
@@ -37,7 +38,7 @@ const randomY = () => Math.floor(Math.random() * height);
 const randomSpeed = () => Math.floor((Math.random() * 300) + 100);
 
 const DAY_FISH = [OrangeFish, GreenFish, BlueFish, Prawn, Octopus, JellyFish];
-const NIGHT_FISH = [JellyFish];
+const NIGHT_FISH = [JellyFish, AnglerFish];
 
 const DAY_BOTTOM_FEEDERS = [Crab];
 const NIGHT_BOTTOM_FEEDERS = [Crab];

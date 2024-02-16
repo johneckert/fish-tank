@@ -1,7 +1,7 @@
 import TWEEN from 'tween';
 
 class Sprite {
-  constructor(context, posX, posY, img, frameWidth, frameHeight, speed) {
+  constructor(context, posX, posY, img, frameWidth, frameHeight, speed, frames) {
     this.context = context;
     this.x = posX;
     this.y = posY;
@@ -9,7 +9,7 @@ class Sprite {
     this.frameWidth = frameWidth;
     this.frameHeight = frameHeight;
     this.frameIndex = 0;
-    this.endFrame = 5;
+    this.endFrame = frames - 1 || 5 ;
     this.speed = speed;
     this.count = 0;
     this.scale = 1;
