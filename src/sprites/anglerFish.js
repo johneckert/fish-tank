@@ -9,9 +9,10 @@ class AnglerFish extends Sprite {
     const frameWidth = 200;
     const frameHeight = 200;
     const frames = 4;
+    const modY = posY > context.canvas.height - frameHeight ? posY - frameHeight : posY;
     anglerFishSpriteSheet.src = AnglerFishPNG;
     
-    super(context, posX, posY, anglerFishSpriteSheet, frameWidth, frameHeight, speed, frames);
+    super(context, posX, modY, anglerFishSpriteSheet, frameWidth, frameHeight, speed, frames);
     this.tween;
     this.tick = this.speed;
   }
