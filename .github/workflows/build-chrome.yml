@@ -11,12 +11,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
+      - name: Build 
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build # will run `yarn build:prod` command
 
-      - name: Build
+      - name: Create Package
         run: |-
-          # fill in your build steps here...
-          # we archive the dist folder and include SHA commit as the last step
-          yarn build
           zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
 
       - name: Archive chrome-extension artifact
