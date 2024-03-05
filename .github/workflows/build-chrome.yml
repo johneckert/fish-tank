@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
@@ -21,8 +21,7 @@ jobs:
           cmd: build # will run `yarn build:prod` command
 
       - name: Create Package
-        run: |-
-          zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
+        run: zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
 
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v2
