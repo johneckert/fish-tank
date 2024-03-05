@@ -9,20 +9,20 @@ jobs:
     name: Build Chrome extension artifact
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Run install
-        uses: borales/actions-yarn@v4
+      - uses: actions/checkout@v4
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
         with:
-          cmd: install # will run `yarn install` command
-      - name: Build 
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build:prod` command
-
+          node-version: "20.x"
+          cache: 'yarn'
+      - name: Install dependencies
+        run: yarn install --immutable
+      - name: Run build
+        run: yarn build
       - name: Create Package
         run: zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
-
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v2
         with:
