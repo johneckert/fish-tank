@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Run build 
-        run: yarn build --env.NODE_ENV=production
+        run: yarn build --env=production
       - name: Create Package
         run: zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
       - name: Archive chrome-extension artifact
