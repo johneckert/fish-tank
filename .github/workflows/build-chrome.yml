@@ -2,8 +2,10 @@ name: Build Chrome Extension
 
 on:
   push:
-    tags:
-      - v*.*.*
+    branches:
+      - 'master'
+    # tags:
+    #   - v*.*.*
 jobs:
   build-chrome-extension:
     name: Build Chrome extension artifact
@@ -19,10 +21,8 @@ jobs:
           cache: 'yarn'
       - name: Install dependencies
         run: yarn install --immutable
-      - name: Run build
-        env: 
-          NODE_ENV: ${{ secrets.NODE_ENV }} 
-        run: yarn build
+      - name: Run build 
+        run: yarn build --env.NODE_ENV=production
       - name: Create Package
         run: zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
       - name: Archive chrome-extension artifact
