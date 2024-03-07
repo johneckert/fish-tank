@@ -60,8 +60,6 @@ jobs:
           unzip chrome-extension.zip
           pwd
           ls -lhs
-          cd dist
-          ls -lhs
       
       - name: Upload step
         run: |-
