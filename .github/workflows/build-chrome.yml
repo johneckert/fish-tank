@@ -46,7 +46,7 @@ jobs:
           node-version: "18.x"
       - uses: actions/download-artifact@v3
       - run: npx chrome-webstore-upload-cli@2 upload --auto-publish
-        working-directory: artifact
+        working-directory: chrome-extension.zip
         env:
           EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
