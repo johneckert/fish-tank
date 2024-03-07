@@ -26,7 +26,7 @@ jobs:
       - name: Create Package
         run: pushd dist; zip -r ../chrome-extension-${{ github.event.pull_request.head.sha }}.zip .; popd
       - name: Archive chrome-extension artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: chrome-extension-${{ github.sha }}
           path: chrome-extension-${{ github.event.pull_request.head.sha }}.zip
@@ -46,7 +46,7 @@ jobs:
           node-version: "18.x"
 
       - name: Download bundle artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: chrome-extension-${{ github.sha }}
 
