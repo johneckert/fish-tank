@@ -28,7 +28,7 @@ jobs:
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v2
         with:
-          name: chrome-extension-${{ github.sha }}
+          name: chrome-extension-${{ github.event.pull_request.head.sha }}
           path: chrome-extension-${{ github.event.pull_request.head.sha }}.zip
   # api usage reference:
   # * <https://developer.chrome.com/docs/webstore/using_webstore_api/>
@@ -48,7 +48,7 @@ jobs:
       - name: Download bundle artifact
         uses: actions/download-artifact@v3
         with:
-          name: chrome-extension-${{ github.sha }}
+          name: chrome-extension-${{ github.event.pull_request.head.sha }}
 
       - name: Install webstore cli
         run: |-
