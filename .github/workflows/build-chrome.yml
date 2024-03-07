@@ -56,8 +56,7 @@ jobs:
       
       - name: Upload step
         run: |-
-          cd
-          ls
+          echo ${{ github.event.pull_request.head.sha }}
           chrome-webstore-upload upload
             --source chrome-extension-${{ github.event.pull_request.head.sha }}.zip
             --extension-id ${{ env.EXTENSION_ID }}
