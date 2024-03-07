@@ -28,9 +28,8 @@ jobs:
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v4
         with:
-          path: ${{ env.DIRECTORY }}
-          # name: chrome-extension
-          # path: chrome-extension.zip
+          name: chrome-extension
+          path: chrome-extension.zip
   # api usage reference:
   # * <https://developer.chrome.com/docs/webstore/using_webstore_api/>
   # * <https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md>
