@@ -44,46 +44,28 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "18.x"
-      - uses: actions/download-artifact@v3
-      # - run: npx chrome-webstore-upload-cli@2 upload --auto-publish
+      - name: Download bundle artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: chrome-extension
+
       - name: Install webstore cli
         run: |-
           npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
         run: |-
-          ls -lhs
           unzip chrome-extension.zip
-      - run: |-
+      
+      - name: Upload step
+        run: |-
           chrome-webstore-upload upload
             --source ./chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
             --refresh-token ${{ env.REFRESH_TOKEN }}
-        working-directory: /home/runner/work/fish-tank/fish-tank/
         env:
           EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
-
-      # - name: Download bundle artifact
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     name: chrome-extension
-
-      # - name: Install webstore cli
-      #   run: |-
-      #     npm install -g chrome-webstore-upload-cli
-      # - name: Unzip the artifact
-      #   run: |-
-      #     unzip chrome-extension.zip
-      
-      # - name: Upload step
-      #   run: |-
-      #     chrome-webstore-upload upload
-      #       --source ./chrome-extension.zip
-      #       --extension-id ${{ env.EXTENSION_ID }}
-      #       --client-id ${{ secrets.GOOGLE_CLIENT_ID }}
-      #       --client-secret ${{ secrets.GOOGLE_CLIENT_SECRET }}
-      #       --refresh-token ${{ secrets.GOOGLE_REFRESH_TOKEN }}
