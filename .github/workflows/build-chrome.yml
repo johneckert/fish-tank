@@ -41,7 +41,7 @@ jobs:
       EXTENSION_ID: fish-tank
 
     steps:
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v4
         with:
           node-version: "18.x"
 
