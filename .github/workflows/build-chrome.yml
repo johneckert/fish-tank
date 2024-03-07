@@ -24,12 +24,12 @@ jobs:
       - name: Run build 
         run: yarn build
       - name: Create Package
-        run: pushd dist; zip -r ../chrome-extension-${{ github.event.pull_request.head.sha }}.zip .; popd
+        run: pushd dist; zip -r ../chrome-extension.zip .; popd
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v4
         with:
-          name: chrome-extension-${{ github.sha }}
-          path: chrome-extension-${{ github.event.pull_request.head.sha }}.zip
+          name: chrome-extension
+          path: chrome-extension.zip
   # api usage reference:
   # * <https://developer.chrome.com/docs/webstore/using_webstore_api/>
   # * <https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md>
@@ -48,7 +48,7 @@ jobs:
       - name: Download bundle artifact
         uses: actions/download-artifact@v4
         with:
-          name: chrome-extension-${{ github.sha }}
+          name: chrome-extension
 
       - name: Install webstore cli
         run: |-
@@ -62,7 +62,7 @@ jobs:
         run: |-
           echo ${{ github.event.pull_request.head.sha }}
           chrome-webstore-upload upload
-            --source chrome-extension-${{ github.event.pull_request.head.sha }}.zip
+            --source chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ secrets.GOOGLE_CLIENT_ID }}
             --client-secret ${{ secrets.GOOGLE_CLIENT_SECRET }}
