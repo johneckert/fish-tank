@@ -56,13 +56,14 @@ jobs:
       - name: Verify some shit
         run: |-
           pwd
+          cwd
           ls -lhs
       
       - name: Upload step
         run: |-
           echo ${{ github.event.pull_request.head.sha }}
           chrome-webstore-upload upload
-            --source /home/runner/work/fish-tank/fish-tank/chrome-extension.zip
+            --source ./chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ secrets.GOOGLE_CLIENT_ID }}
             --client-secret ${{ secrets.GOOGLE_CLIENT_SECRET }}
