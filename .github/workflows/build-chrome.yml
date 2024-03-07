@@ -53,17 +53,12 @@ jobs:
       - name: Install webstore cli
         run: |-
           npm install -g chrome-webstore-upload-cli
-      - name: Verify some shit
+      - name: Unzip the artifact
         run: |-
-          pwd
-          ls -lhs
           unzip chrome-extension.zip
-          pwd
-          ls -lhs
       
       - name: Upload step
         run: |-
-          echo ${{ secrets.GOOGLE_CLIENT_ID }}
           chrome-webstore-upload upload
             --source ./chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
