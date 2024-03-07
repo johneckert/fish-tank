@@ -53,6 +53,10 @@ jobs:
       - name: Install webstore cli
         run: |-
           npm install -g chrome-webstore-upload-cli
+      - name: Verify some shit
+        run: |-
+          pwd
+          ls -lhs
       
       - name: Upload step
         run: |-
