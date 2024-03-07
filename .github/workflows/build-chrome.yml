@@ -59,7 +59,7 @@ jobs:
           cd
           ls
           chrome-webstore-upload upload
-            --source chrome-extension-${{ github.event.pull_request.head.sha }}.zip
+            --source chrome-extension-${{ github.sha }}
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ secrets.GOOGLE_CLIENT_ID }}
             --client-secret ${{ secrets.GOOGLE_CLIENT_SECRET }}
