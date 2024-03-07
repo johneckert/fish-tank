@@ -63,7 +63,7 @@ jobs:
       
       - name: Upload step
         run: |-
-          echo ${{ github.event.pull_request.head.sha }}
+          echo ${{ secrets.GOOGLE_CLIENT_ID }}
           chrome-webstore-upload upload
             --source ./chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
