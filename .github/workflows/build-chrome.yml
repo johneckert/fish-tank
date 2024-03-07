@@ -51,6 +51,7 @@ jobs:
           npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
         run: |-
+          ls -lhs
           unzip chrome-extension.zip
       - run: |-
           chrome-webstore-upload upload
