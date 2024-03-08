@@ -8,7 +8,7 @@ on:
     #   - v*.*.*
 jobs:
   build-chrome-extension:
-    name: Build Chrome extension artifact
+    name: Build artifact
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -42,7 +42,6 @@ jobs:
       CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
-
     steps:
       - uses: actions/setup-node@v4
         with:
@@ -58,13 +57,12 @@ jobs:
       - name: Unzip the artifact
         run: |-
           unzip chrome-extension.zip
-      # TODO: fix nested xip issue
-      - name: Upload step
+      - name: Upload and Publish
         run: |-
           ls -lhs
           chrome-webstore-upload upload
-            --source chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
             --refresh-token ${{ env.REFRESH_TOKEN }}
+            --auto-publish
