@@ -57,16 +57,13 @@ jobs:
           npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
         run: |-
-          unzip chrome-extension.zip -d chrome-extension
+          unzip chrome-extension.zip
       # TODO: fix nested xip issue
       - name: Upload step
         run: |-
           ls -lhs
-          cd chrome-extension
-          ls -lhs
-          cd ..
           chrome-webstore-upload upload
-            --source chrome-extension
+            --source chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
