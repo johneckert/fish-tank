@@ -58,12 +58,11 @@ jobs:
       - name: Unzip the artifact
         run: |-
           unzip -o chrome-extension.zip
-      
       - name: Upload step
         run: |-
           ls -lhs
           chrome-webstore-upload upload
-            --source chrome-extension.zip
+            --source chrome-extension
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
