@@ -57,6 +57,11 @@ jobs:
           unzip chrome-extension.zip
       
       - name: Upload step
+        env:
+          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: |-
           chrome-webstore-upload upload
             --source ./chrome-extension.zip
@@ -64,8 +69,3 @@ jobs:
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
             --refresh-token ${{ env.REFRESH_TOKEN }}
-        env:
-          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
