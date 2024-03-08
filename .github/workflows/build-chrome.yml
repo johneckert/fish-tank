@@ -39,6 +39,9 @@ jobs:
     needs: build-chrome-extension
     env:
       EXTENSION_ID: fish-tank
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
 
     steps:
       - uses: actions/setup-node@v4
@@ -57,11 +60,6 @@ jobs:
           unzip chrome-extension.zip
       
       - name: Upload step
-        env:
-          EXTENSION_ID: ${{ secrets.EXTENSION_ID }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: |-
           chrome-webstore-upload upload
             --source ./chrome-extension.zip
