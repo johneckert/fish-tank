@@ -58,6 +58,7 @@ jobs:
       - name: Unzip the artifact
         run: |-
           unzip -o chrome-extension.zip
+          unzip -o chrome-extension.zip
       
       - name: Upload step
         run: |-
