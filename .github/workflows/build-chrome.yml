@@ -52,12 +52,10 @@ jobs:
           name: chrome-extension
 
       - name: Install webstore cli
-        run: |-
-          npm install -g chrome-webstore-upload-cli
+        run: npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
-        run: |-
-          unzip chrome-extension.zip
-      - name: Upload and Publish
-        run: |-
-          ls -lhs
-          chrome-webstore-upload upload --auto-publish
+        run: unzip chrome-extension.zip
+      - name: Upload
+        run: chrome-webstore-upload upload
+      - name: Upload
+        run: chrome-webstore-upload publish
