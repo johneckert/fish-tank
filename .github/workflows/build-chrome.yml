@@ -62,6 +62,9 @@ jobs:
       - name: Upload step
         run: |-
           ls -lhs
+          cd chrome-extension
+          ls -lhs
+          cd ..
           chrome-webstore-upload upload
             --source chrome-extension
             --extension-id ${{ env.EXTENSION_ID }}
