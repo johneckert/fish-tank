@@ -60,9 +60,4 @@ jobs:
       - name: Upload and Publish
         run: |-
           ls -lhs
-          chrome-webstore-upload upload
-            --extension-id ${{ env.EXTENSION_ID }}
-            --client-id ${{ env.CLIENT_ID }}
-            --client-secret ${{ env.CLIENT_SECRET }}
-            --refresh-token ${{ env.REFRESH_TOKEN }}
-            --auto-publish
+          chrome-webstore-upload upload --auto-publish
