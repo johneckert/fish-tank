@@ -61,7 +61,9 @@ jobs:
       # TODO: fix nested xip issue
       - name: Upload step
         run: |-
+          ls -lhs
           cd unnested
+          ls -lhs
           chrome-webstore-upload upload
             --source chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
