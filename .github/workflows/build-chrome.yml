@@ -61,8 +61,10 @@ jobs:
       - name: Upload step
         run: |-
           ls -lhs
+          cd unnested
+          ls -lhs
           chrome-webstore-upload upload
-            --source ./unnested/chrome-extension.zip
+            --source chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
