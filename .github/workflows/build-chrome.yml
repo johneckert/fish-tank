@@ -57,19 +57,12 @@ jobs:
           npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
         run: |-
-          unzip chrome-extension.zip -d extracted_directory
-          cd extracted_directory
-          while [[ $(find . -type f -name '*.zip') ]]; do
-              nested_zip=$(find . -type f -name '*.zip' | head -n 1)
-              unzip -j "$nested_zip"
-              rm "$nested_zip"
-          done
+          unzip -o chrome-extension.zip
       
       - name: Upload step
         run: |-
-          ls -lhs
           chrome-webstore-upload upload
-            --source ./extracted_directory
+            --source ./chrome-extension.zip
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
