@@ -23,8 +23,8 @@ jobs:
         run: yarn install --immutable
       - name: Run build 
         run: yarn build
-      # - name: Create Package
-      #   run: pushd dist; zip -r ../chrome-extension.zip .; popd
+      - name: Create Package
+        run: pushd dist; zip -r ../chrome-extension.zip .; popd
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v4
         with:
@@ -57,12 +57,18 @@ jobs:
           npm install -g chrome-webstore-upload-cli
       - name: Unzip the artifact
         run: |-
-          unzip chrome-extension.zip
+          unzip chrome-extension.zip -d extracted_directory
+          cd extracted_directory
+          while [[ $(find . -type f -name '*.zip') ]]; do
+              nested_zip=$(find . -type f -name '*.zip' | head -n 1)
+              unzip -j "$nested_zip"
+              rm "$nested_zip"
+          done
       
       - name: Upload step
         run: |-
           chrome-webstore-upload upload
-            --source ./chrome-extension.zip
+            --source ./extracted_directory
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
