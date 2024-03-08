@@ -67,7 +67,7 @@ jobs:
           cd ..
           ls -lhs
           chrome-webstore-upload upload
-            --source ./extracted
+            --source extracted
             --extension-id ${{ env.EXTENSION_ID }}
             --client-id ${{ env.CLIENT_ID }}
             --client-secret ${{ env.CLIENT_SECRET }}
