@@ -23,8 +23,8 @@ jobs:
         run: yarn install --immutable
       - name: Run build 
         run: yarn build
-      - name: Create Package
-        run: pushd dist; zip -r ../chrome-extension.zip .; popd
+      # - name: Create Package
+      #   run: pushd dist; zip -r ../chrome-extension.zip .; popd
       - name: Archive chrome-extension artifact
         uses: actions/upload-artifact@v4
         with:
